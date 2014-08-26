@@ -2,7 +2,9 @@
 lock '3.2.1'
 
 set :application, 'captest'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:klobuczek/captest.git'
+
+after "deploy:restart", "deploy:cleanup"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
